@@ -1,0 +1,40 @@
+*PROGRAMMER NOTES*
+
+TILE
+
+Variables
+-static mesh(static mesh)
+-highlightMaterial(material)
+-unhighlightMaterial(material)
+
+-partOfPath(bool)
+
+-list of neighbouring tiles (tile array)
+
+Functions
+-AddNeighbour(Tile*, Distance to check)
+--If does not exist as a neighbour
+---if distance is less than neighbour radius
+----add to neighbour list
+
+TILE BOARD
+
+Variables
+-TileRowCount
+-TileColCount
+-TileSize
+-List of existing Tiles (tile array)
+
+Functions
+
+-SetupBoard
+--For Each Tile row count 
+---For each Tile col count
+----spawn tile actor at the appropriate position
+----add to tile list
+--For each tile 
+---For each tile in front in the array
+----tile->Add neighbour(tile in front, (tile size + 1))
+
+-AStarFindTilePath(StartTile*, EndTile*)
+--
