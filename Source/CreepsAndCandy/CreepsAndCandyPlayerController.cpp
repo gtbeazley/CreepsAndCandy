@@ -13,6 +13,13 @@ ACreepsAndCandyPlayerController::ACreepsAndCandyPlayerController()
 	DefaultMouseCursor = EMouseCursor::Crosshairs;
 }
 
+void ACreepsAndCandyPlayerController::BeginPlay()
+{
+	Super::BeginPlay();
+
+	bEnableClickEvents = true;
+}
+
 void ACreepsAndCandyPlayerController::PlayerTick(float DeltaTime)
 {
 	Super::PlayerTick(DeltaTime);

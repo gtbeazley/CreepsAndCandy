@@ -9,11 +9,22 @@ ACreepsAndCandyGameMode::ACreepsAndCandyGameMode()
 {
 	// use our custom PlayerController class
 	PlayerControllerClass = ACreepsAndCandyPlayerController::StaticClass();
+	
 
 	// set default pawn class to our Blueprinted character
-	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/TopDownCPP/Blueprints/TopDownCharacter"));
+	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/TopDownCPP/Blueprints/Player_Pawn"));
 	if (PlayerPawnBPClass.Class != NULL)
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+}
+
+void ACreepsAndCandyGameMode::BeginPlay()
+{
+	Super::BeginPlay();
+}
+
+void ACreepsAndCandyGameMode::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
 }
